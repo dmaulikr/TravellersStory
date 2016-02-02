@@ -13,18 +13,18 @@ It would be valuable to the iPhone users as they are already used to taking phot
 ## Functionality
 
 1. Create a travel story
-1.1 Add a title
-1.2 Add photos
-1.2.1 Add the image
-1.2.2 Add note
-1.2.3 Add the date
-1.2.4 Add the place
+1.1. Add a title
+1.2. Add photos
+1.2.1. Add the image
+1.2.2. Add note
+1.2.3. Add the date
+1.2.4. Add the place
+1.3. Add other notes
 
-1.3 Add other notes
 2. Edit the stories added
-2.1 Edit the title
-2.2 Edit the notes
-2.3 Change the images
+2.1. Edit the title
+2.2. Edit the notes
+2.3. Change the images
 
 3. Delete (from) story
 
