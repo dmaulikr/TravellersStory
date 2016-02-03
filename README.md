@@ -28,7 +28,4 @@ It would be valuable to the iPhone users as they are already used to taking phot
 
 3. Delete (from) story
 
-4. Share the story
-
-5. See other users' stories
 
