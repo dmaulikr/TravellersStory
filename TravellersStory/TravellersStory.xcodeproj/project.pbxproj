@@ -13,9 +13,11 @@
 		55A24DFA1C6282630031DB97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55A24DF91C6282630031DB97 /* Assets.xcassets */; };
 		55A24DFD1C6282630031DB97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A24DFB1C6282630031DB97 /* LaunchScreen.storyboard */; };
 		55A24E081C62923F0031DB97 /* MyStoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A24E061C62923F0031DB97 /* MyStoriesViewController.m */; };
-		55A24E091C62923F0031DB97 /* MyStoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55A24E071C62923F0031DB97 /* MyStoriesViewController.xib */; };
 		55A24E0D1C62925F0031DB97 /* CommunityStoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A24E0B1C62925E0031DB97 /* CommunityStoriesViewController.m */; };
-		55A24E0E1C62925F0031DB97 /* CommunityStoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55A24E0C1C62925E0031DB97 /* CommunityStoriesViewController.xib */; };
+		55A24E121C62A6750031DB97 /* MyStoryDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A24E111C62A6750031DB97 /* MyStoryDetailsViewController.m */; };
+		55A24E151C62A8340031DB97 /* AddStoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A24E141C62A8340031DB97 /* AddStoryViewController.m */; };
+		55A24E191C62A8C80031DB97 /* MyStoriesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A24E171C62A8C80031DB97 /* MyStoriesTableViewCell.m */; };
+		55A24E1A1C62A8C80031DB97 /* MyStoriesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55A24E181C62A8C80031DB97 /* MyStoriesTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,10 +31,15 @@
 		55A24DFE1C6282630031DB97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55A24E051C62923F0031DB97 /* MyStoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyStoriesViewController.h; sourceTree = "<group>"; };
 		55A24E061C62923F0031DB97 /* MyStoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyStoriesViewController.m; sourceTree = "<group>"; };
-		55A24E071C62923F0031DB97 /* MyStoriesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyStoriesViewController.xib; sourceTree = "<group>"; };
 		55A24E0A1C62925E0031DB97 /* CommunityStoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityStoriesViewController.h; sourceTree = "<group>"; };
 		55A24E0B1C62925E0031DB97 /* CommunityStoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityStoriesViewController.m; sourceTree = "<group>"; };
-		55A24E0C1C62925E0031DB97 /* CommunityStoriesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunityStoriesViewController.xib; sourceTree = "<group>"; };
+		55A24E101C62A6750031DB97 /* MyStoryDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyStoryDetailsViewController.h; sourceTree = "<group>"; };
+		55A24E111C62A6750031DB97 /* MyStoryDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyStoryDetailsViewController.m; sourceTree = "<group>"; };
+		55A24E131C62A8340031DB97 /* AddStoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddStoryViewController.h; sourceTree = "<group>"; };
+		55A24E141C62A8340031DB97 /* AddStoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddStoryViewController.m; sourceTree = "<group>"; };
+		55A24E161C62A8C80031DB97 /* MyStoriesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyStoriesTableViewCell.h; sourceTree = "<group>"; };
+		55A24E171C62A8C80031DB97 /* MyStoriesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyStoriesTableViewCell.m; sourceTree = "<group>"; };
+		55A24E181C62A8C80031DB97 /* MyStoriesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyStoriesTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +72,7 @@
 		55A24DE91C6282630031DB97 /* TravellersStory */ = {
 			isa = PBXGroup;
 			children = (
+				55A24E0F1C62A63F0031DB97 /* Views */,
 				55A24E041C62920B0031DB97 /* ViewControllers */,
 				55A24DED1C6282630031DB97 /* AppDelegate.h */,
 				55A24DEE1C6282630031DB97 /* AppDelegate.m */,
@@ -90,12 +98,24 @@
 			children = (
 				55A24E051C62923F0031DB97 /* MyStoriesViewController.h */,
 				55A24E061C62923F0031DB97 /* MyStoriesViewController.m */,
-				55A24E071C62923F0031DB97 /* MyStoriesViewController.xib */,
 				55A24E0A1C62925E0031DB97 /* CommunityStoriesViewController.h */,
 				55A24E0B1C62925E0031DB97 /* CommunityStoriesViewController.m */,
-				55A24E0C1C62925E0031DB97 /* CommunityStoriesViewController.xib */,
+				55A24E101C62A6750031DB97 /* MyStoryDetailsViewController.h */,
+				55A24E111C62A6750031DB97 /* MyStoryDetailsViewController.m */,
+				55A24E131C62A8340031DB97 /* AddStoryViewController.h */,
+				55A24E141C62A8340031DB97 /* AddStoryViewController.m */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		55A24E0F1C62A63F0031DB97 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				55A24E161C62A8C80031DB97 /* MyStoriesTableViewCell.h */,
+				55A24E171C62A8C80031DB97 /* MyStoriesTableViewCell.m */,
+				55A24E181C62A8C80031DB97 /* MyStoriesTableViewCell.xib */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,10 +176,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				55A24DFD1C6282630031DB97 /* LaunchScreen.storyboard in Resources */,
+				55A24E1A1C62A8C80031DB97 /* MyStoriesTableViewCell.xib in Resources */,
 				55A24DFA1C6282630031DB97 /* Assets.xcassets in Resources */,
 				55A24DF81C6282630031DB97 /* Main.storyboard in Resources */,
-				55A24E091C62923F0031DB97 /* MyStoriesViewController.xib in Resources */,
-				55A24E0E1C62925F0031DB97 /* CommunityStoriesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,9 +190,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				55A24E0D1C62925F0031DB97 /* CommunityStoriesViewController.m in Sources */,
+				55A24E191C62A8C80031DB97 /* MyStoriesTableViewCell.m in Sources */,
 				55A24E081C62923F0031DB97 /* MyStoriesViewController.m in Sources */,
 				55A24DEF1C6282630031DB97 /* AppDelegate.m in Sources */,
 				55A24DEC1C6282630031DB97 /* main.m in Sources */,
+				55A24E151C62A8340031DB97 /* AddStoryViewController.m in Sources */,
+				55A24E121C62A6750031DB97 /* MyStoryDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

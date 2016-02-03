@@ -34,6 +34,52 @@
             </objects>
             <point key="canvasLocation" x="1789" y="-360"/>
         </scene>
+        <!--My Story Details View Controller-->
+        <scene sceneID="eX5-PC-nvt">
+            <objects>
+                <tableViewController id="aZT-oL-T06" customClass="MyStoryDetailsViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="qui-Y3-qF2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="qtE-lc-0ed">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qtE-lc-0ed" id="g4b-Hb-Vhq">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="aZT-oL-T06" id="gLx-2H-Wkn"/>
+                            <outlet property="delegate" destination="aZT-oL-T06" id="dld-AM-NzO"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1NR-rt-nKd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2554" y="-363"/>
+        </scene>
+        <!--Add Story View Controller-->
+        <scene sceneID="poO-yy-Lyi">
+            <objects>
+                <viewController id="XUf-d3-3lS" customClass="AddStoryViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="siO-ug-kaS"/>
+                        <viewControllerLayoutGuide type="bottom" id="xrO-k1-PFN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="C6N-3j-gmH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Air-Yg-GqR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3214" y="-363"/>
+        </scene>
         <!--My Stories-->
         <scene sceneID="NId-ar-7eU">
             <objects>
