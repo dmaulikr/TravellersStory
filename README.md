@@ -25,7 +25,7 @@ It would be valuable to the iPhone users as they are already used to taking phot
   *Add the place
 
 
-4.Edit the stories added
+4.Edit the stories added 
  1.Edit the title
  2.Edit the notes
  3.Change the images
