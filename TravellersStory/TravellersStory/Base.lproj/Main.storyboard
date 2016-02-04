@@ -65,7 +65,7 @@
         <!--Add Story View Controller-->
         <scene sceneID="poO-yy-Lyi">
             <objects>
-                <viewController id="XUf-d3-3lS" customClass="AddStoryViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addStoryScene" id="XUf-d3-3lS" customClass="AddStoryViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="siO-ug-kaS"/>
                         <viewControllerLayoutGuide type="bottom" id="xrO-k1-PFN"/>

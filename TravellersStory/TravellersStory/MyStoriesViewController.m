@@ -10,6 +10,7 @@
 #import "MyStoriesTableViewCell.h"
 #import "MyStory.h"
 #import "MyStoryDetailsViewController.h"
+#import "AddStoryViewController.h"
 
 
 @interface MyStoriesViewController ()
@@ -25,7 +26,9 @@
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    UIBarButtonItem *addBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showAdd)];
+    
+    self.navigationItem.rightBarButtonItem = addBarButton;
     
     NSDateComponents *dateComponentsFrom = [[NSDateComponents alloc] init];
     dateComponentsFrom.year   = 2012;
@@ -73,6 +76,13 @@
                         nil];
 }
 
+-(void) showAdd {
+    NSString *storyBoardId = @"addStoryScene";
+    
+    AddStoryViewController *addPhoneVC =
+    [self.storyboard instantiateViewControllerWithIdentifier:storyBoardId];
+    [self.navigationController pushViewController:addPhoneVC animated:YES];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
