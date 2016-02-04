@@ -7,6 +7,9 @@
 //
 
 #import "MyStoriesViewController.h"
+#import "MyStoriesTableViewCell.h"
+#import "MyStory.h"
+
 
 @interface MyStoriesViewController ()
 
@@ -22,6 +25,51 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    NSDateComponents *dateComponentsFrom = [[NSDateComponents alloc] init];
+    dateComponentsFrom.year   = 2012;
+    dateComponentsFrom.month  = 8;
+    dateComponentsFrom.day    = 12;
+    NSDate *dateFrom = [[NSCalendar currentCalendar] dateFromComponents:dateComponentsFrom];
+    
+    NSDateComponents *dateComponentsTo = [[NSDateComponents alloc] init];
+    dateComponentsTo.year   = 2012;
+    dateComponentsTo.month  = 8;
+    dateComponentsTo.day    = 12;
+    NSDate *dateTo = [[NSCalendar currentCalendar] dateFromComponents:dateComponentsTo];
+    
+    self.myStories = [NSArray arrayWithObjects:
+                        
+                        [MyStory myStoryWithTitle:@"Vacation in Lefkada"
+                                         dateFrom:dateFrom
+                                           dateTo:dateTo
+                                      andImageUrl:@"http://www.odans-travel.com//img/PROGRAMI/BIG_ekskurzia_porto_kaciki_lefkada_1416910147550.jpg"],
+                        
+                        [MyStory myStoryWithTitle:@"3 Days in Rome"
+                                         dateFrom:dateFrom
+                                           dateTo:dateTo
+                                      andImageUrl:@"http://static1.squarespace.com/static/533a4baae4b01b10be99195f/t/540f31c8e4b0b6aef5c7a1e0/1410281928794/Rome-Italy_2501454b.jpg?format=1500w"],
+                        
+                        [MyStory myStoryWithTitle:@"Paris the city of love"
+                                         dateFrom:dateFrom
+                                           dateTo:dateTo
+                                      andImageUrl:@"http://www.meininger-hotels.com/typo3temp/pics/5576e705b9.jpg"],
+                      
+                        [MyStory myStoryWithTitle:@"3 Days in Rome"
+                                         dateFrom:dateFrom
+                                           dateTo:dateTo
+                                      andImageUrl:@"http://static1.squarespace.com/static/533a4baae4b01b10be99195f/t/540f31c8e4b0b6aef5c7a1e0/1410281928794/Rome-Italy_2501454b.jpg?format=1500w"],
+                      
+                        [MyStory myStoryWithTitle:@"Vacation in Lefkada"
+                                         dateFrom:dateFrom
+                                           dateTo:dateTo
+                                      andImageUrl:@"http://www.odans-travel.com//img/PROGRAMI/BIG_ekskurzia_porto_kaciki_lefkada_1416910147550.jpg"],
+                      
+                        [MyStory myStoryWithTitle:@"Paris the city of love"
+                                         dateFrom:dateFrom
+                                           dateTo:dateTo
+                                      andImageUrl:@"http://www.meininger-hotels.com/typo3temp/pics/5576e705b9.jpg"],
+                        nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,26 +79,68 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//#warning Incomplete implementation, return the number of sections
+//    return 0;
+//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+
+    return self.myStories.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    static NSString *cellIdentifier = @"myStoriesCell";
     
-    // Configure the cell...
+    UITableViewCell *originalCell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    if(![originalCell isKindOfClass:[MyStoriesTableViewCell class]] || originalCell == nil) {
+        originalCell = [[[NSBundle mainBundle] loadNibNamed:@"MyStoriesTableViewCell" owner:nil options:nil] objectAtIndex:0];
+    }
+    
+    MyStoriesTableViewCell *cell = (MyStoriesTableViewCell*) originalCell;
+    
+    MyStory *story = [self.myStories objectAtIndex:indexPath.row];
+    
+    cell.titleLabel.text = story.title;
+    
+    NSDate *dateFrom = story.dateFrom;
+    NSDate *dateTo = story.dateTo;
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy/MM/dd"];
+    
+    NSString *dateFromString = [dateFormatter stringFromDate:dateFrom];
+    NSString *dateToString = [dateFormatter stringFromDate:dateTo];
+    
+    NSMutableString *dateFromTo = [[NSMutableString alloc]init];
+    [dateFromTo appendString:dateFromString];
+    [dateFromTo appendString:@" - "];
+    [dateFromTo appendString:dateToString];
+    
+    cell.datesLabel.text = dateFromTo;
+    
+    UIImage *img = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString: story.imageUrl]]];
+    
+    
+    
+    cell.cellImageView.frame = CGRectMake(0,0, 100, 100);
+   
+    cell.cellImageView.image = img;
+    
+    [cell setBackgroundColor:[UIColor colorWithRed:0.98 green:0.95 blue:0.93 alpha:1.0]];
+    
+    [cell.contentView.layer setBorderColor:[UIColor whiteColor].CGColor];
+    
+    [cell.contentView.layer setBorderWidth:3.0f];
     
     return cell;
 }
-*/
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 120;
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

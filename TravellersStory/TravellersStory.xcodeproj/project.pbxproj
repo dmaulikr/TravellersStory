@@ -18,6 +18,7 @@
 		55A24E151C62A8340031DB97 /* AddStoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A24E141C62A8340031DB97 /* AddStoryViewController.m */; };
 		55A24E191C62A8C80031DB97 /* MyStoriesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A24E171C62A8C80031DB97 /* MyStoriesTableViewCell.m */; };
 		55A24E1A1C62A8C80031DB97 /* MyStoriesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55A24E181C62A8C80031DB97 /* MyStoriesTableViewCell.xib */; };
+		55A24E1E1C6345660031DB97 /* MyStory.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A24E1D1C6345660031DB97 /* MyStory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,8 @@
 		55A24E161C62A8C80031DB97 /* MyStoriesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyStoriesTableViewCell.h; sourceTree = "<group>"; };
 		55A24E171C62A8C80031DB97 /* MyStoriesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyStoriesTableViewCell.m; sourceTree = "<group>"; };
 		55A24E181C62A8C80031DB97 /* MyStoriesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyStoriesTableViewCell.xib; sourceTree = "<group>"; };
+		55A24E1C1C6345660031DB97 /* MyStory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyStory.h; sourceTree = "<group>"; };
+		55A24E1D1C6345660031DB97 /* MyStory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyStory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +75,7 @@
 		55A24DE91C6282630031DB97 /* TravellersStory */ = {
 			isa = PBXGroup;
 			children = (
+				55A24E1B1C6339010031DB97 /* Models */,
 				55A24E0F1C62A63F0031DB97 /* Views */,
 				55A24E041C62920B0031DB97 /* ViewControllers */,
 				55A24DED1C6282630031DB97 /* AppDelegate.h */,
@@ -116,6 +120,15 @@
 				55A24E181C62A8C80031DB97 /* MyStoriesTableViewCell.xib */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		55A24E1B1C6339010031DB97 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				55A24E1C1C6345660031DB97 /* MyStory.h */,
+				55A24E1D1C6345660031DB97 /* MyStory.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +205,7 @@
 				55A24E0D1C62925F0031DB97 /* CommunityStoriesViewController.m in Sources */,
 				55A24E191C62A8C80031DB97 /* MyStoriesTableViewCell.m in Sources */,
 				55A24E081C62923F0031DB97 /* MyStoriesViewController.m in Sources */,
+				55A24E1E1C6345660031DB97 /* MyStory.m in Sources */,
 				55A24DEF1C6282630031DB97 /* AppDelegate.m in Sources */,
 				55A24DEC1C6282630031DB97 /* main.m in Sources */,
 				55A24E151C62A8340031DB97 /* AddStoryViewController.m in Sources */,

@@ -10,4 +10,6 @@
 
 @interface MyStoriesViewController : UITableViewController
 
+@property (strong, nonatomic) NSArray *myStories;
+
 @end

@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface MyStoriesTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *cellImageView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *datesLabel;
 
 @end
