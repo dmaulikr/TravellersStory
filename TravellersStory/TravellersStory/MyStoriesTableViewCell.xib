@@ -15,12 +15,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="378" height="99"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kb0-J7-IhE">
-                        <rect key="frame" x="0.0" y="4" width="150" height="91"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="150" id="ecB-q2-B1z"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6i8-9N-BBU">
                         <rect key="frame" x="153" y="8" width="209" height="31"/>
                         <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="20"/>
@@ -34,9 +28,15 @@
                             <constraint firstAttribute="width" constant="180" id="rp7-xp-Adn"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kb0-J7-IhE">
+                        <rect key="frame" x="0.0" y="4" width="150" height="91"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="150" id="ecB-q2-B1z"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="kb0-J7-IhE" secondAttribute="bottom" constant="4" id="1Pd-xh-1ix"/>

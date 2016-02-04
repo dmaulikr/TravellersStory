@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		551ACD371C63E0CA003C8A6B /* MyStoryHeadingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 551ACD351C63E0CA003C8A6B /* MyStoryHeadingTableViewCell.m */; };
+		551ACD381C63E0CA003C8A6B /* MyStoryHeadingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 551ACD361C63E0CA003C8A6B /* MyStoryHeadingTableViewCell.xib */; };
+		551ACD3C1C63EBDF003C8A6B /* MyStoryContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 551ACD3A1C63EBDF003C8A6B /* MyStoryContentTableViewCell.m */; };
+		551ACD3D1C63EBDF003C8A6B /* MyStoryContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 551ACD3B1C63EBDF003C8A6B /* MyStoryContentTableViewCell.xib */; };
+		551ACD401C63F850003C8A6B /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 551ACD3F1C63F850003C8A6B /* Photo.m */; };
 		55A24DEC1C6282630031DB97 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A24DEB1C6282630031DB97 /* main.m */; };
 		55A24DEF1C6282630031DB97 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A24DEE1C6282630031DB97 /* AppDelegate.m */; };
 		55A24DF81C6282630031DB97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A24DF61C6282630031DB97 /* Main.storyboard */; };
@@ -22,6 +27,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		551ACD341C63E0CA003C8A6B /* MyStoryHeadingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyStoryHeadingTableViewCell.h; sourceTree = "<group>"; };
+		551ACD351C63E0CA003C8A6B /* MyStoryHeadingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyStoryHeadingTableViewCell.m; sourceTree = "<group>"; };
+		551ACD361C63E0CA003C8A6B /* MyStoryHeadingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyStoryHeadingTableViewCell.xib; sourceTree = "<group>"; };
+		551ACD391C63EBDF003C8A6B /* MyStoryContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyStoryContentTableViewCell.h; sourceTree = "<group>"; };
+		551ACD3A1C63EBDF003C8A6B /* MyStoryContentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyStoryContentTableViewCell.m; sourceTree = "<group>"; };
+		551ACD3B1C63EBDF003C8A6B /* MyStoryContentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyStoryContentTableViewCell.xib; sourceTree = "<group>"; };
+		551ACD3E1C63F850003C8A6B /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		551ACD3F1C63F850003C8A6B /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		55A24DE71C6282630031DB97 /* TravellersStory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravellersStory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A24DEB1C6282630031DB97 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		55A24DED1C6282630031DB97 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -118,6 +131,12 @@
 				55A24E161C62A8C80031DB97 /* MyStoriesTableViewCell.h */,
 				55A24E171C62A8C80031DB97 /* MyStoriesTableViewCell.m */,
 				55A24E181C62A8C80031DB97 /* MyStoriesTableViewCell.xib */,
+				551ACD341C63E0CA003C8A6B /* MyStoryHeadingTableViewCell.h */,
+				551ACD351C63E0CA003C8A6B /* MyStoryHeadingTableViewCell.m */,
+				551ACD361C63E0CA003C8A6B /* MyStoryHeadingTableViewCell.xib */,
+				551ACD391C63EBDF003C8A6B /* MyStoryContentTableViewCell.h */,
+				551ACD3A1C63EBDF003C8A6B /* MyStoryContentTableViewCell.m */,
+				551ACD3B1C63EBDF003C8A6B /* MyStoryContentTableViewCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -127,6 +146,8 @@
 			children = (
 				55A24E1C1C6345660031DB97 /* MyStory.h */,
 				55A24E1D1C6345660031DB97 /* MyStory.m */,
+				551ACD3E1C63F850003C8A6B /* Photo.h */,
+				551ACD3F1C63F850003C8A6B /* Photo.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -189,8 +210,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				55A24DFD1C6282630031DB97 /* LaunchScreen.storyboard in Resources */,
+				551ACD3D1C63EBDF003C8A6B /* MyStoryContentTableViewCell.xib in Resources */,
 				55A24E1A1C62A8C80031DB97 /* MyStoriesTableViewCell.xib in Resources */,
 				55A24DFA1C6282630031DB97 /* Assets.xcassets in Resources */,
+				551ACD381C63E0CA003C8A6B /* MyStoryHeadingTableViewCell.xib in Resources */,
 				55A24DF81C6282630031DB97 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,13 +226,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				55A24E0D1C62925F0031DB97 /* CommunityStoriesViewController.m in Sources */,
+				551ACD3C1C63EBDF003C8A6B /* MyStoryContentTableViewCell.m in Sources */,
 				55A24E191C62A8C80031DB97 /* MyStoriesTableViewCell.m in Sources */,
 				55A24E081C62923F0031DB97 /* MyStoriesViewController.m in Sources */,
 				55A24E1E1C6345660031DB97 /* MyStory.m in Sources */,
 				55A24DEF1C6282630031DB97 /* AppDelegate.m in Sources */,
 				55A24DEC1C6282630031DB97 /* main.m in Sources */,
 				55A24E151C62A8340031DB97 /* AddStoryViewController.m in Sources */,
+				551ACD401C63F850003C8A6B /* Photo.m in Sources */,
 				55A24E121C62A6750031DB97 /* MyStoryDetailsViewController.m in Sources */,
+				551ACD371C63E0CA003C8A6B /* MyStoryHeadingTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +384,7 @@
 				55A24E031C6282630031DB97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

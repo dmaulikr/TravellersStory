@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MyStory.h"
 
 @interface MyStoryDetailsViewController : UITableViewController
+
+@property (strong, nonatomic) MyStory *myStory;
+@property (strong, nonatomic) NSArray *photos;
 
 @end

@@ -7,6 +7,9 @@
 //
 
 #import "MyStoryDetailsViewController.h"
+#import "Photo.h"
+#import "MyStoryContentTableViewCell.h"
+#import "MyStoryHeadingTableViewCell.h"
 
 @interface MyStoryDetailsViewController ()
 
@@ -22,6 +25,12 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    self.photos = [NSArray arrayWithObjects:
+                   [Photo photoWithNote:@"day one at the island..." andImage:@"http://www.odans-travel.com//img/PROGRAMI/BIG_ekskurzia_porto_kaciki_lefkada_1416910147550.jpg"],
+                   [Photo photoWithNote:@"beach porto katsiki wow" andImage:@"http://guardianlv.com/wp-content/uploads/2014/06/portokatsiki.jpg"],
+                   nil];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,25 +40,70 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return self.photos.count+1;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
-    
-    return cell;
+    if (indexPath.row == 0) {
+        static NSString *cellIdentifierHeading = @"myStoryHeadingCell";
+        
+        UITableViewCell *originalCell = [tableView dequeueReusableCellWithIdentifier:cellIdentifierHeading];
+        
+        if(![originalCell isKindOfClass:[MyStoryHeadingTableViewCell class]] || originalCell == nil) {
+            originalCell = [[[NSBundle mainBundle] loadNibNamed:@"MyStoryHeadingTableViewCell" owner:nil options:nil] objectAtIndex:0];
+        }
+        
+        MyStoryHeadingTableViewCell *cell = (MyStoryHeadingTableViewCell*) originalCell;
+        
+        cell.titleLabel.text =  self.myStory.title;
+        
+        NSDate *dateFrom = self.myStory.dateFrom;
+        NSDate *dateTo = self.myStory.dateTo;
+        
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yyyy/MM/dd"];
+        
+        NSString *dateFromString = [dateFormatter stringFromDate:dateFrom];
+        NSString *dateToString = [dateFormatter stringFromDate:dateTo];
+        
+        cell.dateFromLabel.text = dateFromString;
+        cell.dateToLabel.text = dateToString;
+        cell.destinationLabel.text = @"Greece, Lefkada";
+        
+        return  cell;
+        
+        
+        
+    } else {
+        static NSString *cellIdentifierContent = @"myStoryContentCell";
+        
+        UITableViewCell *originalCell = [tableView dequeueReusableCellWithIdentifier:cellIdentifierContent];
+        
+        if(![originalCell isKindOfClass:[MyStoryContentTableViewCell class]] || originalCell == nil) {
+            originalCell = [[[NSBundle mainBundle] loadNibNamed:@"MyStoryContentTableViewCell" owner:nil options:nil] objectAtIndex:0];
+        }
+        
+        MyStoryContentTableViewCell *cell = (MyStoryContentTableViewCell*) originalCell;
+        
+        Photo *photo = [self.photos objectAtIndex:indexPath.row -1];
+        
+        cell.noteTextView.text =  photo.note;
+        
+        UIImage *img = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString: photo.image]]];
+        //cell.imageView.frame = CGRectMake(0,0, 270, 270);
+        cell.photoImageView.image = img;
+        
+        return cell;
+    }  
+   
 }
-*/
+
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 400;
+}
 
 /*
 // Override to support conditional editing of the table view.

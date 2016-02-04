@@ -10,8 +10,6 @@
 
 @implementation MyStory
 
-
-
 -(instancetype)initWithTitle:(NSString *)title
                     dateFrom:(NSDate *)dateFrom
                       dateTo:(NSDate *)dateTo

@@ -37,7 +37,7 @@
         <!--My Story Details View Controller-->
         <scene sceneID="eX5-PC-nvt">
             <objects>
-                <tableViewController id="aZT-oL-T06" customClass="MyStoryDetailsViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="myStoryDetailsScene" id="aZT-oL-T06" customClass="MyStoryDetailsViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="qui-Y3-qF2">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

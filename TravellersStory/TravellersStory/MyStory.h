@@ -14,6 +14,8 @@
 @property (strong, nonatomic) NSDate *dateFrom;
 @property (strong, nonatomic) NSDate *dateTo;
 @property (strong, nonatomic) NSString *imageUrl;
+@property (strong, nonatomic) NSMutableArray *photos;
+@property (strong, nonatomic) NSString *destination;
 
 -(instancetype)initWithTitle: (NSString*) title
                     dateFrom: (NSDate*) dateFrom
