@@ -18,8 +18,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cMR-o6-Oid">
                         <rect key="frame" x="19" y="12" width="300" height="320"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17P-AS-Lgt">
-                                <rect key="frame" x="212" y="0.0" width="80" height="13"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17P-AS-Lgt">
+                                <rect key="frame" x="110" y="103" width="80" height="60"/>
                                 <state key="normal" title="add photo">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -36,7 +36,7 @@
                                 <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nhb-U9-ncE">
+                            <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nhb-U9-ncE">
                                 <rect key="frame" x="30" y="13" width="240" height="240"/>
                                 <color key="backgroundColor" red="0.83383413461538458" green="0.83383413461538458" blue="0.83383413461538458" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>

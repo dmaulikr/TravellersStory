@@ -10,4 +10,6 @@
 
 @interface AddStoryViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
+@property (nonatomic) NSInteger numberOfRows;
+
 @end

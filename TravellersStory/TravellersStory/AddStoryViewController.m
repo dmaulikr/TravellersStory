@@ -8,6 +8,8 @@
 
 #import "AddStoryViewController.h"
 #import "AddPhotoTableViewCell.h"
+#import "MyStory.h"
+#import "Photo.h"
 
 @interface AddStoryViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
@@ -31,20 +33,39 @@
     UIBarButtonItem *doneBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(saveStory)];
     self.navigationItem.rightBarButtonItem = doneBarButton;
     
+    self.numberOfRows = 2;
 }
 
 
--(void) saveStory{
-
+-(void) saveStory {
+    
+    MyStory *newStory = [MyStory myStoryWithTitle:self.titleTextField.text
+                                         dateFrom:self.dateFromDatePicker.date
+                                           dateTo:self.dateToDatePicker.date
+                                      andImageUrl:@""];
+    
+    NSMutableArray *photosForStory = [[NSMutableArray alloc]init];
+    
+    NSInteger numberOfPhotos = [self.photosTableView numberOfRowsInSection:0];
+    
+    for (int row = 0; row < numberOfPhotos; row++) {
+        NSIndexPath* cellPath = [NSIndexPath indexPathForRow:row inSection:0];
+        AddPhotoTableViewCell *cell = [self.photosTableView cellForRowAtIndexPath:cellPath];
+        
+        Photo *newPhoto = [Photo photoWithNote:cell.addNoteTextView.text
+                                      andImage: @"hah"];
+        [photosForStory addObject:newPhoto];
+    }
 }
-
+                         
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return self.numberOfRows;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -59,7 +80,14 @@
     
     AddPhotoTableViewCell *cell = (AddPhotoTableViewCell*) originalCell;
     
+    cell.delegate = self;
+    
     return cell;
+}
+
+-(void)loadNewScreen:(UIViewController *)controller;
+{
+    [self presentViewController:controller animated:YES completion:nil];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -67,6 +95,12 @@
 }
 
 - (IBAction)addPhoto:(id)sender {
+    self.numberOfRows++;    
+    NSArray *paths = [self.photosTableView indexPathsForVisibleRows];
+    
+    [self.photosTableView beginUpdates];
+    [self.photosTableView insertRowsAtIndexPaths:(NSArray *) paths withRowAnimation:UITableViewRowAnimationMiddle];
+    [self.photosTableView endUpdates];
 }
 
 /*
