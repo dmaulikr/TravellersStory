@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="addPhotoCell" rowHeight="341" id="KGk-i7-Jjw" customClass="AddPhotoTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="339" height="341"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="339" height="340"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cMR-o6-Oid">
+                        <rect key="frame" x="19" y="12" width="300" height="320"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17P-AS-Lgt">
+                                <rect key="frame" x="212" y="0.0" width="80" height="13"/>
+                                <state key="normal" title="add photo">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addPhoto:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="WQr-Sd-DWU"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Add your note here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DCx-tA-etS">
+                                <rect key="frame" x="8" y="260" width="284" height="52"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="5Xl-Y8-zmw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nhb-U9-ncE">
+                                <rect key="frame" x="30" y="13" width="240" height="240"/>
+                                <color key="backgroundColor" red="0.83383413461538458" green="0.83383413461538458" blue="0.83383413461538458" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DCx-tA-etS" firstAttribute="bottom" secondItem="cMR-o6-Oid" secondAttribute="bottomMargin" id="4XF-G0-LHE"/>
+                            <constraint firstItem="17P-AS-Lgt" firstAttribute="leading" secondItem="cMR-o6-Oid" secondAttribute="leading" constant="212" id="4qx-zL-iF0"/>
+                            <constraint firstItem="DCx-tA-etS" firstAttribute="leading" secondItem="cMR-o6-Oid" secondAttribute="leadingMargin" id="5Zh-hz-ScP"/>
+                            <constraint firstItem="nhb-U9-ncE" firstAttribute="centerX" secondItem="DCx-tA-etS" secondAttribute="centerX" id="8cf-Ac-hCp"/>
+                            <constraint firstItem="17P-AS-Lgt" firstAttribute="top" secondItem="cMR-o6-Oid" secondAttribute="top" id="DhT-Qm-9TO"/>
+                            <constraint firstItem="nhb-U9-ncE" firstAttribute="leading" secondItem="cMR-o6-Oid" secondAttribute="leading" constant="30" id="Mrl-qL-U8O"/>
+                            <constraint firstItem="DCx-tA-etS" firstAttribute="top" secondItem="nhb-U9-ncE" secondAttribute="bottom" constant="7" id="SMF-mJ-jRJ"/>
+                            <constraint firstItem="nhb-U9-ncE" firstAttribute="top" secondItem="17P-AS-Lgt" secondAttribute="bottom" id="hW5-i0-Ier"/>
+                            <constraint firstItem="17P-AS-Lgt" firstAttribute="centerY" secondItem="cMR-o6-Oid" secondAttribute="centerY" constant="-154" id="iFE-Qy-eJG"/>
+                            <constraint firstItem="DCx-tA-etS" firstAttribute="trailing" secondItem="cMR-o6-Oid" secondAttribute="trailingMargin" id="r9q-Cg-od0"/>
+                            <constraint firstItem="DCx-tA-etS" firstAttribute="centerX" secondItem="17P-AS-Lgt" secondAttribute="centerX" constant="-102" id="rp5-dE-5nO"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" red="0.98039215690000003" green="0.94901960780000005" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="cMR-o6-Oid" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="61N-4f-yHz"/>
+                    <constraint firstItem="cMR-o6-Oid" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="11" id="LF5-Ke-BhT"/>
+                    <constraint firstItem="cMR-o6-Oid" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="fe9-kD-l40"/>
+                    <constraint firstItem="cMR-o6-Oid" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="2" id="hiQ-lB-y6F"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="addImageView" destination="nhb-U9-ncE" id="shS-aA-9iA"/>
+                <outlet property="addNoteTextView" destination="DCx-tA-etS" id="QDk-UN-2C1"/>
+            </connections>
+            <point key="canvasLocation" x="283.5" y="305.5"/>
+        </tableViewCell>
+    </objects>
+</document>
