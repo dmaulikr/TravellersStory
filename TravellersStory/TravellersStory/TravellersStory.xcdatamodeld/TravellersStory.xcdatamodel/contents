@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15A284" minimumToolsVersion="Xcode 7.0">
-    <elements/>
+    <entity name="Photo" syncable="YES">
+        <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="note" optional="YES" attributeType="String" minValueString="3" maxValueString="150" syncable="YES"/>
+        <relationship name="story" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Story" inverseName="photos" inverseEntity="Story" syncable="YES"/>
+    </entity>
+    <entity name="Story" syncable="YES">
+        <attribute name="dateFrom" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="dateTo" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="destination" optional="YES" attributeType="String" minValueString="3" maxValueString="100" syncable="YES"/>
+        <attribute name="mainImg" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" minValueString="3" maxValueString="100" syncable="YES"/>
+        <relationship name="photos" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Photo" inverseName="story" inverseEntity="Photo" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Story" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="Photo" positionX="-54" positionY="0" width="128" height="90"/>
+    </elements>
 </model>
