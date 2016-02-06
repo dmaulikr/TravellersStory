@@ -15,6 +15,8 @@
 		551ACD441C64C9F6003C8A6B /* AddPhotoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 551ACD421C64C9F6003C8A6B /* AddPhotoTableViewCell.m */; };
 		551ACD451C64C9F6003C8A6B /* AddPhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 551ACD431C64C9F6003C8A6B /* AddPhotoTableViewCell.xib */; };
 		551FA2CB1C665FC200AD04E3 /* OverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 551FA2CA1C665FC200AD04E3 /* OverlayView.xib */; };
+		551FA2CD1C666C1300AD04E3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 551FA2CC1C666C1300AD04E3 /* CoreData.framework */; };
+		551FA2D01C6679FF00AD04E3 /* TravellersStory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 551FA2CE1C6679FF00AD04E3 /* TravellersStory.xcdatamodeld */; };
 		55A24DEC1C6282630031DB97 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A24DEB1C6282630031DB97 /* main.m */; };
 		55A24DEF1C6282630031DB97 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A24DEE1C6282630031DB97 /* AppDelegate.m */; };
 		55A24DF81C6282630031DB97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A24DF61C6282630031DB97 /* Main.storyboard */; };
@@ -42,6 +44,8 @@
 		551ACD421C64C9F6003C8A6B /* AddPhotoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPhotoTableViewCell.m; sourceTree = "<group>"; };
 		551ACD431C64C9F6003C8A6B /* AddPhotoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddPhotoTableViewCell.xib; sourceTree = "<group>"; };
 		551FA2CA1C665FC200AD04E3 /* OverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OverlayView.xib; sourceTree = "<group>"; };
+		551FA2CC1C666C1300AD04E3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		551FA2CF1C6679FF00AD04E3 /* TravellersStory.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TravellersStory.xcdatamodel; sourceTree = "<group>"; };
 		55A24DE71C6282630031DB97 /* TravellersStory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravellersStory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A24DEB1C6282630031DB97 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		55A24DED1C6282630031DB97 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -70,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				551FA2CD1C666C1300AD04E3 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +84,7 @@
 		55A24DDE1C6282630031DB97 = {
 			isa = PBXGroup;
 			children = (
+				551FA2CC1C666C1300AD04E3 /* CoreData.framework */,
 				55A24DE91C6282630031DB97 /* TravellersStory */,
 				55A24DE81C6282630031DB97 /* Products */,
 			);
@@ -105,6 +111,7 @@
 				55A24DFB1C6282630031DB97 /* LaunchScreen.storyboard */,
 				55A24DFE1C6282630031DB97 /* Info.plist */,
 				55A24DEA1C6282630031DB97 /* Supporting Files */,
+				551FA2CE1C6679FF00AD04E3 /* TravellersStory.xcdatamodeld */,
 			);
 			path = TravellersStory;
 			sourceTree = "<group>";
@@ -239,6 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				551FA2D01C6679FF00AD04E3 /* TravellersStory.xcdatamodeld in Sources */,
 				55A24E0D1C62925F0031DB97 /* CommunityStoriesViewController.m in Sources */,
 				551ACD3C1C63EBDF003C8A6B /* MyStoryContentTableViewCell.m in Sources */,
 				55A24E191C62A8C80031DB97 /* MyStoriesTableViewCell.m in Sources */,
@@ -408,6 +416,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		551FA2CE1C6679FF00AD04E3 /* TravellersStory.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				551FA2CF1C6679FF00AD04E3 /* TravellersStory.xcdatamodel */,
+			);
+			currentVersion = 551FA2CF1C6679FF00AD04E3 /* TravellersStory.xcdatamodel */;
+			path = TravellersStory.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 55A24DDF1C6282630031DB97 /* Project object */;
 }
