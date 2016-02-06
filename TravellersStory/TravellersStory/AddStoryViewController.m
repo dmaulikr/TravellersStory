@@ -90,6 +90,12 @@
     [self presentViewController:controller animated:YES completion:nil];
 }
 
+-(void)dismissImagePicker
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 375;
 }

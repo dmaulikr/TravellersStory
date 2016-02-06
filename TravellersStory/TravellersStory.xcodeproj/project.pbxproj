@@ -14,6 +14,7 @@
 		551ACD401C63F850003C8A6B /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 551ACD3F1C63F850003C8A6B /* Photo.m */; };
 		551ACD441C64C9F6003C8A6B /* AddPhotoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 551ACD421C64C9F6003C8A6B /* AddPhotoTableViewCell.m */; };
 		551ACD451C64C9F6003C8A6B /* AddPhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 551ACD431C64C9F6003C8A6B /* AddPhotoTableViewCell.xib */; };
+		551FA2CB1C665FC200AD04E3 /* OverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 551FA2CA1C665FC200AD04E3 /* OverlayView.xib */; };
 		55A24DEC1C6282630031DB97 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A24DEB1C6282630031DB97 /* main.m */; };
 		55A24DEF1C6282630031DB97 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A24DEE1C6282630031DB97 /* AppDelegate.m */; };
 		55A24DF81C6282630031DB97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A24DF61C6282630031DB97 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 		551ACD411C64C9F6003C8A6B /* AddPhotoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPhotoTableViewCell.h; sourceTree = "<group>"; };
 		551ACD421C64C9F6003C8A6B /* AddPhotoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPhotoTableViewCell.m; sourceTree = "<group>"; };
 		551ACD431C64C9F6003C8A6B /* AddPhotoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddPhotoTableViewCell.xib; sourceTree = "<group>"; };
+		551FA2CA1C665FC200AD04E3 /* OverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OverlayView.xib; sourceTree = "<group>"; };
 		55A24DE71C6282630031DB97 /* TravellersStory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravellersStory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A24DEB1C6282630031DB97 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		55A24DED1C6282630031DB97 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 		55A24E0F1C62A63F0031DB97 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				551FA2CA1C665FC200AD04E3 /* OverlayView.xib */,
 				55A24E161C62A8C80031DB97 /* MyStoriesTableViewCell.h */,
 				55A24E171C62A8C80031DB97 /* MyStoriesTableViewCell.m */,
 				55A24E181C62A8C80031DB97 /* MyStoriesTableViewCell.xib */,
@@ -191,6 +194,7 @@
 				TargetAttributes = {
 					55A24DE61C6282630031DB97 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 425HM3BWFZ;
 					};
 				};
 			};
@@ -222,6 +226,7 @@
 				55A24E1A1C62A8C80031DB97 /* MyStoriesTableViewCell.xib in Resources */,
 				55A24DFA1C6282630031DB97 /* Assets.xcassets in Resources */,
 				551ACD381C63E0CA003C8A6B /* MyStoryHeadingTableViewCell.xib in Resources */,
+				551FA2CB1C665FC200AD04E3 /* OverlayView.xib in Resources */,
 				551ACD451C64C9F6003C8A6B /* AddPhotoTableViewCell.xib in Resources */,
 				55A24DF81C6282630031DB97 /* Main.storyboard in Resources */,
 			);
@@ -357,10 +362,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TravellersStory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sv.TravellersStory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -368,10 +376,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TravellersStory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sv.TravellersStory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

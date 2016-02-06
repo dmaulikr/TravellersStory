@@ -11,6 +11,8 @@
 
 @protocol changePictureProtocol <NSObject>
 -(void)loadNewScreen:(UIViewController *)controller;
+-(void)dismissImagePicker;
+
 @end
 
 @interface AddPhotoTableViewCell : UITableViewCell <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
@@ -18,6 +20,15 @@
 @property (weak, nonatomic) IBOutlet UIImageView *addImageView;
 @property (weak, nonatomic) IBOutlet UITextView *addNoteTextView;
 - (IBAction)addPhoto:(id)sender;
+- (IBAction)openPhotoGallery:(id)sender;
+
+
+
+@property (nonatomic) UIView *overlayView;
+@property (nonatomic, weak) IBOutlet UIBarButtonItem *takePictureButton;
+@property (nonatomic, weak) IBOutlet UIBarButtonItem *startStopButton;
+@property (nonatomic, weak) IBOutlet UIBarButtonItem *delayedPhotoButton;
+@property (nonatomic, weak) IBOutlet UIBarButtonItem *doneButton;
 
 @property (nonatomic) UIImagePickerController *imagePickerController;
 @property (nonatomic) NSMutableArray *capturedImages;

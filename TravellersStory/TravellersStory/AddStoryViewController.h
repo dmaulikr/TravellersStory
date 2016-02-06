@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AddPhotoTableViewCell.h"
 
-@interface AddStoryViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface AddStoryViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, changePictureProtocol>
 
 @property (nonatomic) NSInteger numberOfRows;
 
