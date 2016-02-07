@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ImageFullScreenViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIImageView *fullScreenImageView;
+@interface ImageFullScreenViewController : UIViewController <UIScrollViewDelegate>
+@property (strong, nonatomic) IBOutlet UIImageView *fullScreenImageView;
 
 @property (strong, nonatomic) UIImage *theImage;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
 
 @end
+

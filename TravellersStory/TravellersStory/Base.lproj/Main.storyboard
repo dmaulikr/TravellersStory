@@ -75,28 +75,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QPO-pF-I3O">
-                                <rect key="frame" x="0.0" y="28" width="401" height="552"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D1H-bg-7NU">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QPO-pF-I3O">
+                                        <rect key="frame" x="0.0" y="24" width="401" height="552"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="552" id="Prp-rw-DZt"/>
+                                            <constraint firstAttribute="width" constant="401" id="Uvv-AM-Tol"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="401" id="Uvv-AM-Tol"/>
+                                    <constraint firstItem="QPO-pF-I3O" firstAttribute="top" secondItem="D1H-bg-7NU" secondAttribute="top" constant="24" id="339-8g-QJ4"/>
+                                    <constraint firstAttribute="bottom" secondItem="QPO-pF-I3O" secondAttribute="bottom" constant="24" id="4fk-vo-Kj0"/>
+                                    <constraint firstItem="QPO-pF-I3O" firstAttribute="leading" secondItem="D1H-bg-7NU" secondAttribute="leading" id="DFq-cZ-M8g"/>
+                                    <constraint firstAttribute="trailing" secondItem="QPO-pF-I3O" secondAttribute="trailing" constant="199" id="Dck-jC-dqs"/>
+                                    <constraint firstItem="QPO-pF-I3O" firstAttribute="top" secondItem="D1H-bg-7NU" secondAttribute="top" constant="24" id="bzy-GY-oyP"/>
+                                    <constraint firstItem="QPO-pF-I3O" firstAttribute="leading" secondItem="D1H-bg-7NU" secondAttribute="leading" id="oSo-cU-s9I"/>
+                                    <constraint firstAttribute="trailing" secondItem="QPO-pF-I3O" secondAttribute="trailing" constant="199" id="oYF-LQ-N0R"/>
                                 </constraints>
-                            </imageView>
+                                <connections>
+                                    <outlet property="delegate" destination="IGE-zM-PnS" id="RlE-jb-FtK"/>
+                                </connections>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="QPO-pF-I3O" firstAttribute="leading" secondItem="J8N-7K-d2D" secondAttribute="leadingMargin" constant="-20" id="R4R-Iy-EyJ"/>
-                            <constraint firstItem="QPO-pF-I3O" firstAttribute="top" secondItem="y05-9W-ISO" secondAttribute="bottom" constant="8" id="hfJ-a0-mjW"/>
-                            <constraint firstItem="QPO-pF-I3O" firstAttribute="centerY" secondItem="J8N-7K-d2D" secondAttribute="centerY" constant="4" id="www-7Z-WXk"/>
+                            <constraint firstAttribute="trailing" secondItem="D1H-bg-7NU" secondAttribute="trailing" id="D9k-bK-oe4"/>
+                            <constraint firstItem="D1H-bg-7NU" firstAttribute="leading" secondItem="J8N-7K-d2D" secondAttribute="leading" id="QPO-j5-k5C"/>
+                            <constraint firstItem="D1H-bg-7NU" firstAttribute="top" secondItem="J8N-7K-d2D" secondAttribute="top" id="fKo-Bs-geP"/>
+                            <constraint firstItem="D1H-bg-7NU" firstAttribute="bottom" secondItem="Ss1-sY-CiB" secondAttribute="top" id="gjK-og-hug"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="fullScreenImageView" destination="QPO-pF-I3O" id="0zn-YI-egP"/>
+                        <outlet property="scrollView" destination="D1H-bg-7NU" id="7Mu-sO-yWn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tOr-eU-Ae7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3212" y="-166"/>
+            <point key="canvasLocation" x="3218" y="-174"/>
         </scene>
         <!--Add Story View Controller-->
         <scene sceneID="poO-yy-Lyi">
