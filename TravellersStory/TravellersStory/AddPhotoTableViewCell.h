@@ -25,13 +25,6 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *openImgGallery;
 
-/*
-@property (nonatomic) UIView *overlayView;
-@property (nonatomic, weak) IBOutlet UIBarButtonItem *takePictureButton;
-@property (nonatomic, weak) IBOutlet UIBarButtonItem *startStopButton;
-@property (nonatomic, weak) IBOutlet UIBarButtonItem *delayedPhotoButton;
-@property (nonatomic, weak) IBOutlet UIBarButtonItem *doneButton;
-*/
 
 @property (nonatomic) UIImagePickerController *imagePickerController;
 @property (nonatomic) NSMutableArray *capturedImages;

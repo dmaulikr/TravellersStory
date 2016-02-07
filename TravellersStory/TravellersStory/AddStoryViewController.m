@@ -35,6 +35,7 @@
     
     self.numberOfRows = 2;
     
+    self.capturedImages = [[NSMutableArray alloc] init];    
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -127,5 +128,86 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)addMainImg:(id)sender {
+    [self showImagePickerForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];}
+
+- (void)showImagePickerForSourceType:(UIImagePickerControllerSourceType)sourceType
+{
+    
+    if (self.mainImageView.isAnimating)
+    {
+        [self.mainImageView stopAnimating];
+    }
+    
+    if (self.capturedImages.count > 0)
+    {
+        [self.capturedImages removeAllObjects];
+    }
+    
+    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+    
+    
+    imagePickerController.modalPresentationStyle = UIModalPresentationCurrentContext;
+    imagePickerController.sourceType = sourceType;
+    imagePickerController.allowsEditing = YES;
+    imagePickerController.delegate = self;
+    
+
+    self.imagePickerController = imagePickerController;
+    
+    [self presentViewController:self.imagePickerController animated:YES completion:nil];
+}
+
+- (IBAction)takePhoto:(id)sender
+{
+    [self.imagePickerController takePicture];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
+    
+    CGSize size=CGSizeMake(70, 70);
+    UIImage *resizedImage= [self resizeImage:image imageSize:size];
+    
+    [self.capturedImages addObject:resizedImage];
+    
+    [self finishAndUpdate];
+    
+}
+
+-(UIImage*)resizeImage:(UIImage *)image imageSize:(CGSize)size
+{
+    UIGraphicsBeginImageContext(size);
+    [image drawInRect:CGRectMake(0,0,size.width,size.height)];
+    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
+
+- (void)finishAndUpdate
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    if ([self.capturedImages count] > 0)
+    {
+        if ([self.capturedImages count] == 1)
+        {
+            [self.mainImageView setImage:[self.capturedImages objectAtIndex:0]];
+        }
+        
+        [self.capturedImages removeAllObjects];
+    }
+    
+    self.imagePickerController = nil;
+    
+    self.addMainImageButton.hidden = YES;
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end
