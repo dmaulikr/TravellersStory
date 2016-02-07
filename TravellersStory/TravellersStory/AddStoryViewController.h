@@ -22,5 +22,6 @@
 @property (nonatomic) UIImagePickerController *imagePickerController;
 @property (nonatomic) NSMutableArray *capturedImages;
 
+- (IBAction)getLocation:(id)sender;
 
 @end

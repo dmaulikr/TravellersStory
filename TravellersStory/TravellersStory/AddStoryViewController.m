@@ -13,6 +13,7 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 #import "CoreData/CoreData.h"
+#import "LocationProvider.h"
 
 @interface AddStoryViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
@@ -27,6 +28,8 @@
 
 @implementation AddStoryViewController
 
+LocationProvider* locationProvider;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -38,12 +41,46 @@
     
     self.numberOfRows = 1;
     
-    self.capturedImages = [[NSMutableArray alloc] init];    
+    self.capturedImages = [[NSMutableArray alloc] init];
+    
+    locationProvider = [[LocationProvider alloc] init];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.tabBarController.tabBar.hidden = YES;
+}
+
+- (IBAction)getLocation:(id)sender {
+    [locationProvider getLocationWithTarget:self
+                                  andAction:@selector(locationUpdated:)];
+}
+
+
+
+
+-(void) locationUpdated: (CLLocation*) location{
+    NSString* locationMessage = [NSString stringWithFormat:@"Your position is (%lf, %lf)",
+                                 location.coordinate.latitude,
+                                 location.coordinate.longitude];
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+   
+    
+    [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
+       
+        if (error == nil && [placemarks count] > 0) {
+           CLPlacemark *placemark = [placemarks lastObject];
+            NSString *place = [NSString stringWithFormat:@"%@, %@",
+                                placemark.locality, placemark.country];
+            
+            self.destinationTextField.text = place;
+            
+        } else {
+            NSLog(@"%@", error.debugDescription);
+        }
+    } ];
+  
 }
 
 
@@ -245,5 +282,6 @@
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 
 @end

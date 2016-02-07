@@ -18,6 +18,8 @@
 		551FA2CD1C666C1300AD04E3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 551FA2CC1C666C1300AD04E3 /* CoreData.framework */; };
 		551FA2D01C6679FF00AD04E3 /* TravellersStory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 551FA2CE1C6679FF00AD04E3 /* TravellersStory.xcdatamodeld */; };
 		551FA2D31C6780E700AD04E3 /* ImageFullScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 551FA2D21C6780E700AD04E3 /* ImageFullScreenViewController.m */; };
+		551FA2D71C67B70C00AD04E3 /* LocationProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 551FA2D61C67B70C00AD04E3 /* LocationProvider.m */; };
+		551FA2D91C67B98D00AD04E3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 551FA2D81C67B98D00AD04E3 /* CoreLocation.framework */; };
 		55A24DEC1C6282630031DB97 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A24DEB1C6282630031DB97 /* main.m */; };
 		55A24DEF1C6282630031DB97 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A24DEE1C6282630031DB97 /* AppDelegate.m */; };
 		55A24DF81C6282630031DB97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A24DF61C6282630031DB97 /* Main.storyboard */; };
@@ -49,6 +51,9 @@
 		551FA2CF1C6679FF00AD04E3 /* TravellersStory.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TravellersStory.xcdatamodel; sourceTree = "<group>"; };
 		551FA2D11C6780E700AD04E3 /* ImageFullScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageFullScreenViewController.h; sourceTree = "<group>"; };
 		551FA2D21C6780E700AD04E3 /* ImageFullScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageFullScreenViewController.m; sourceTree = "<group>"; };
+		551FA2D51C67B70C00AD04E3 /* LocationProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationProvider.h; sourceTree = "<group>"; };
+		551FA2D61C67B70C00AD04E3 /* LocationProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationProvider.m; sourceTree = "<group>"; };
+		551FA2D81C67B98D00AD04E3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		55A24DE71C6282630031DB97 /* TravellersStory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravellersStory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A24DEB1C6282630031DB97 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		55A24DED1C6282630031DB97 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -77,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				551FA2D91C67B98D00AD04E3 /* CoreLocation.framework in Frameworks */,
 				551FA2CD1C666C1300AD04E3 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,9 +90,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		551FA2D41C67B6D000AD04E3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				551FA2D51C67B70C00AD04E3 /* LocationProvider.h */,
+				551FA2D61C67B70C00AD04E3 /* LocationProvider.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		55A24DDE1C6282630031DB97 = {
 			isa = PBXGroup;
 			children = (
+				551FA2D81C67B98D00AD04E3 /* CoreLocation.framework */,
 				551FA2CC1C666C1300AD04E3 /* CoreData.framework */,
 				55A24DE91C6282630031DB97 /* TravellersStory */,
 				55A24DE81C6282630031DB97 /* Products */,
@@ -104,6 +120,7 @@
 		55A24DE91C6282630031DB97 /* TravellersStory */ = {
 			isa = PBXGroup;
 			children = (
+				551FA2D41C67B6D000AD04E3 /* Helpers */,
 				55A24E1B1C6339010031DB97 /* Models */,
 				55A24E0F1C62A63F0031DB97 /* Views */,
 				55A24E041C62920B0031DB97 /* ViewControllers */,
@@ -253,6 +270,7 @@
 			files = (
 				551FA2D01C6679FF00AD04E3 /* TravellersStory.xcdatamodeld in Sources */,
 				551FA2D31C6780E700AD04E3 /* ImageFullScreenViewController.m in Sources */,
+				551FA2D71C67B70C00AD04E3 /* LocationProvider.m in Sources */,
 				55A24E0D1C62925F0031DB97 /* CommunityStoriesViewController.m in Sources */,
 				551ACD3C1C63EBDF003C8A6B /* MyStoryContentTableViewCell.m in Sources */,
 				55A24E191C62A8C80031DB97 /* MyStoriesTableViewCell.m in Sources */,

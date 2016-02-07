@@ -138,8 +138,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Destination" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xHs-aB-WPb">
-                                <rect key="frame" x="98" y="68" width="263" height="22"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Destination" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xHs-aB-WPb">
+                                <rect key="frame" x="98" y="65" width="226" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -209,6 +209,13 @@
                                 <state key="normal" title="add photo"/>
                                 <connections>
                                     <action selector="addMainImg:" destination="XUf-d3-3lS" eventType="touchUpInside" id="Jge-7J-D9b"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KHh-DJ-4FU">
+                                <rect key="frame" x="312" y="73" width="46" height="30"/>
+                                <state key="normal" title="get"/>
+                                <connections>
+                                    <action selector="getLocation:" destination="XUf-d3-3lS" eventType="touchUpInside" id="EHp-Me-owC"/>
                                 </connections>
                             </button>
                         </subviews>
