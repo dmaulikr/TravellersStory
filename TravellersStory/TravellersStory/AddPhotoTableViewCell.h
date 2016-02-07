@@ -21,7 +21,9 @@
 @property (weak, nonatomic) IBOutlet UITextView *addNoteTextView;
 - (IBAction)addPhoto:(id)sender;
 - (IBAction)openPhotoGallery:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *addImg;
 
+@property (weak, nonatomic) IBOutlet UIButton *openImgGallery;
 
 /*
 @property (nonatomic) UIView *overlayView;

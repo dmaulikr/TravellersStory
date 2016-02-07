@@ -132,6 +132,9 @@
     }
     
     self.imagePickerController = nil;
+    
+    self.addImg.hidden = YES;
+    self.openImgGallery.hidden = YES;
 }
 
 

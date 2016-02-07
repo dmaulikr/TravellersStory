@@ -80,7 +80,9 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="addImageView" destination="nhb-U9-ncE" id="shS-aA-9iA"/>
+                <outlet property="addImg" destination="17P-AS-Lgt" id="ky4-R4-HtF"/>
                 <outlet property="addNoteTextView" destination="DCx-tA-etS" id="QDk-UN-2C1"/>
+                <outlet property="openImgGallery" destination="rMi-vc-HNy" id="Ohk-0H-lAE"/>
             </connections>
             <point key="canvasLocation" x="283.5" y="305.5"/>
         </tableViewCell>
