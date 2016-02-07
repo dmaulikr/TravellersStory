@@ -30,7 +30,8 @@
 }
 
 - (IBAction)openPhotoGallery:(id)sender {
-    [self showImagePickerForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];  }
+    [self showImagePickerForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+}
 
 - (void)showImagePickerForSourceType:(UIImagePickerControllerSourceType)sourceType
 {
@@ -51,8 +52,8 @@
     
     imagePickerController.modalPresentationStyle = UIModalPresentationCurrentContext;
     imagePickerController.sourceType = sourceType;
-    imagePickerController.allowsEditing = NO;
-    imagePickerController.delegate = self.delegate;
+    imagePickerController.allowsEditing = YES;
+    imagePickerController.delegate = self;
     
    
     
@@ -66,16 +67,18 @@
         
         /*
          Load the overlay view from the OverlayView nib file. Self is the File's Owner for the nib file, so the overlayView outlet is set to the main view in the nib. Pass that view to the image picker controller to use as its overlay view, and set self's reference to the view to nil.
-         */
         
-        [[NSBundle mainBundle] loadNibNamed:@"OverlayView" owner:self options:nil];
+        
+        [[NSBundle mainBundle] loadNibNamed:@"OverlayView" owner:self.delegate options:nil];
         self.overlayView.frame = imagePickerController.cameraOverlayView.frame;
        imagePickerController.cameraOverlayView = self.overlayView;
         self.overlayView = nil;
-     }
+          */     }
 
     
     self.imagePickerController = imagePickerController;
+    
+    
     
     [self.delegate loadNewScreen:imagePickerController];
     

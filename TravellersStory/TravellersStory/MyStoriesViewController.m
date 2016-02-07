@@ -82,6 +82,7 @@
     AddStoryViewController *addPhoneVC =
     [self.storyboard instantiateViewControllerWithIdentifier:storyBoardId];
     [self.navigationController pushViewController:addPhoneVC animated:YES];
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

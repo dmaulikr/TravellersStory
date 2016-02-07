@@ -31,53 +31,51 @@
                                 <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17P-AS-Lgt">
-                                <rect key="frame" x="106" y="82" width="80" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="nb1-nb-gX4"/>
-                                </constraints>
-                                <state key="normal" title="add photo">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="addPhoto:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="WQr-Sd-DWU"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rMi-vc-HNy">
-                                <rect key="frame" x="78" y="149" width="145" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Ob9-A3-nhH"/>
-                                </constraints>
-                                <state key="normal" title="open photo gallery"/>
-                                <connections>
-                                    <action selector="openPhotoGallery:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="tio-4N-peU"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="rMi-vc-HNy" firstAttribute="leading" secondItem="cMR-o6-Oid" secondAttribute="leading" constant="78" id="0rx-f4-nRg"/>
                             <constraint firstItem="DCx-tA-etS" firstAttribute="bottom" secondItem="cMR-o6-Oid" secondAttribute="bottomMargin" id="4XF-G0-LHE"/>
                             <constraint firstItem="DCx-tA-etS" firstAttribute="leading" secondItem="cMR-o6-Oid" secondAttribute="leadingMargin" id="5Zh-hz-ScP"/>
                             <constraint firstItem="nhb-U9-ncE" firstAttribute="centerX" secondItem="DCx-tA-etS" secondAttribute="centerX" id="8cf-Ac-hCp"/>
                             <constraint firstItem="nhb-U9-ncE" firstAttribute="leading" secondItem="cMR-o6-Oid" secondAttribute="leading" constant="30" id="Mrl-qL-U8O"/>
-                            <constraint firstItem="17P-AS-Lgt" firstAttribute="leading" secondItem="cMR-o6-Oid" secondAttribute="leading" constant="106" id="Mwo-dA-ySJ"/>
                             <constraint firstItem="DCx-tA-etS" firstAttribute="top" secondItem="nhb-U9-ncE" secondAttribute="bottom" constant="7" id="SMF-mJ-jRJ"/>
-                            <constraint firstItem="17P-AS-Lgt" firstAttribute="top" secondItem="cMR-o6-Oid" secondAttribute="top" constant="82" id="dyY-b5-r9o"/>
                             <constraint firstItem="nhb-U9-ncE" firstAttribute="top" secondItem="cMR-o6-Oid" secondAttribute="topMargin" id="gsh-a2-U9Z"/>
                             <constraint firstItem="DCx-tA-etS" firstAttribute="trailing" secondItem="cMR-o6-Oid" secondAttribute="trailingMargin" id="r9q-Cg-od0"/>
-                            <constraint firstItem="rMi-vc-HNy" firstAttribute="centerX" secondItem="DCx-tA-etS" secondAttribute="centerX" id="sVK-QX-Bb6"/>
-                            <constraint firstItem="DCx-tA-etS" firstAttribute="top" secondItem="rMi-vc-HNy" secondAttribute="bottom" constant="81" id="wQK-Xc-e0B"/>
-                            <constraint firstItem="rMi-vc-HNy" firstAttribute="top" secondItem="17P-AS-Lgt" secondAttribute="bottom" constant="7" id="ymL-fc-7if"/>
                         </constraints>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rMi-vc-HNy">
+                        <rect key="frame" x="105" y="157" width="129" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="Ob9-A3-nhH"/>
+                        </constraints>
+                        <state key="normal" title="open photo gallery"/>
+                        <connections>
+                            <action selector="openPhotoGallery:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="tio-4N-peU"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17P-AS-Lgt">
+                        <rect key="frame" x="129" y="93" width="80" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="nb1-nb-gX4"/>
+                        </constraints>
+                        <state key="normal" title="add photo">
+                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="addPhoto:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="WQr-Sd-DWU"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" red="0.98039215690000003" green="0.94901960780000005" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="cMR-o6-Oid" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="61N-4f-yHz"/>
+                    <constraint firstItem="rMi-vc-HNy" firstAttribute="top" secondItem="17P-AS-Lgt" secondAttribute="bottom" constant="34" id="GIy-ti-fcT"/>
                     <constraint firstItem="cMR-o6-Oid" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="11" id="LF5-Ke-BhT"/>
+                    <constraint firstItem="17P-AS-Lgt" firstAttribute="centerX" secondItem="cMR-o6-Oid" secondAttribute="centerX" id="SEh-yo-0Qk"/>
                     <constraint firstItem="cMR-o6-Oid" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="fe9-kD-l40"/>
                     <constraint firstItem="cMR-o6-Oid" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="2" id="hiQ-lB-y6F"/>
+                    <constraint firstItem="17P-AS-Lgt" firstAttribute="centerX" secondItem="rMi-vc-HNy" secondAttribute="centerX" id="myN-V7-JLQ"/>
+                    <constraint firstItem="17P-AS-Lgt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="85" id="tIr-If-F80"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

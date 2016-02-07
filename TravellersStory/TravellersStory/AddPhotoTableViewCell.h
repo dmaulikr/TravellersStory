@@ -23,19 +23,20 @@
 - (IBAction)openPhotoGallery:(id)sender;
 
 
-
+/*
 @property (nonatomic) UIView *overlayView;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *takePictureButton;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *startStopButton;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *delayedPhotoButton;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *doneButton;
+*/
 
 @property (nonatomic) UIImagePickerController *imagePickerController;
 @property (nonatomic) NSMutableArray *capturedImages;
 
 @property (nonatomic, retain) id<changePictureProtocol> delegate;
 
-- (void)cell:(AddPhotoTableViewCell *)cell presentViewController:(UIViewController *)controller;
+//- (void)cell:(AddPhotoTableViewCell *)cell presentViewController:(UIViewController *)controller;
 @end
 
 

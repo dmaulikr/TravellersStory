@@ -34,6 +34,12 @@
     self.navigationItem.rightBarButtonItem = doneBarButton;
     
     self.numberOfRows = 2;
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.tabBarController.tabBar.hidden = YES;
 }
 
 
@@ -82,12 +88,15 @@
     
     cell.delegate = self;
     
+    
     return cell;
 }
 
 -(void)loadNewScreen:(UIViewController *)controller;
 {
+    
     [self presentViewController:controller animated:YES completion:nil];
+    
 }
 
 -(void)dismissImagePicker

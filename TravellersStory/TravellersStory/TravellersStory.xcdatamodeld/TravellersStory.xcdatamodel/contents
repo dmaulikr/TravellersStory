@@ -15,6 +15,6 @@
     </entity>
     <elements>
         <element name="Story" positionX="-63" positionY="-18" width="128" height="135"/>
-        <element name="Photo" positionX="-54" positionY="0" width="128" height="90"/>
+        <element name="Photo" positionX="214" positionY="-9" width="128" height="90"/>
     </elements>
 </model>
