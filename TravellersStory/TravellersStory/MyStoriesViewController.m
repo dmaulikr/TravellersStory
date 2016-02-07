@@ -11,6 +11,8 @@
 #import "MyStory.h"
 #import "MyStoryDetailsViewController.h"
 #import "AddStoryViewController.h"
+#import "CoreData/CoreData.h"
+#import "AppDelegate.h"
 
 
 @interface MyStoriesViewController ()
@@ -30,6 +32,7 @@
     
     self.navigationItem.rightBarButtonItem = addBarButton;
     
+    /*
     NSDateComponents *dateComponentsFrom = [[NSDateComponents alloc] init];
     dateComponentsFrom.year   = 2012;
     dateComponentsFrom.month  = 8;
@@ -74,6 +77,31 @@
                                            dateTo:dateTo
                                       andImageUrl:@"http://www.meininger-hotels.com/typo3temp/pics/5576e705b9.jpg"],
                         nil];
+     
+     */
+    
+    
+}
+
+-(void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    
+    
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *managedObjectContext = [appDelegate managedObjectContext];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Story" inManagedObjectContext:managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"dateFrom" ascending:NO];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject: sort]];
+    
+    
+    NSError *error;
+    self.myStories = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    [self.tableView reloadData];
 }
 
 -(void) showAdd {
@@ -82,8 +110,8 @@
     AddStoryViewController *addPhoneVC =
     [self.storyboard instantiateViewControllerWithIdentifier:storyBoardId];
     [self.navigationController pushViewController:addPhoneVC animated:YES];
-    
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -113,12 +141,12 @@
     
     MyStoriesTableViewCell *cell = (MyStoriesTableViewCell*) originalCell;
     
-    MyStory *story = [self.myStories objectAtIndex:indexPath.row];
+    NSManagedObject *story = (NSManagedObject *)[self.myStories objectAtIndex:indexPath.row];
     
-    cell.titleLabel.text = story.title;
+    cell.titleLabel.text = [story valueForKey:@"title"];
     
-    NSDate *dateFrom = story.dateFrom;
-    NSDate *dateTo = story.dateTo;
+    NSDate *dateFrom = [story valueForKey:@"dateFrom"];
+    NSDate *dateTo = [story valueForKey:@"dateTo"];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy/MM/dd"];
@@ -133,9 +161,7 @@
     
     cell.datesLabel.text = dateFromTo;
     
-    UIImage *img = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString: story.imageUrl]]];
-    
-    
+    UIImage *img = [UIImage imageWithData:[story valueForKey:@"mainImg"]];
     
     cell.cellImageView.frame = CGRectMake(0,0, 100, 100);
    
@@ -156,7 +182,7 @@
 
 
  - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-     MyStory *story = [self.myStories objectAtIndex:indexPath.row];
+     NSManagedObject *story = (NSManagedObject*)[self.myStories objectAtIndex:indexPath.row];
      NSString *storyBoardId = @"myStoryDetailsScene";
      
      MyStoryDetailsViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:storyBoardId];

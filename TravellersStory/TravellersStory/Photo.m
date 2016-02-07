@@ -10,7 +10,7 @@
 
 @implementation Photo
 
--(instancetype) initWithNote:(NSString *)note andImage:(NSString *)image {
+-(instancetype) initWithNote:(NSString *)note andImage:(NSData *)image {
     if (self = [super init]) {
         self.note = note,
         self.image = image;
@@ -19,7 +19,7 @@
     return self;
 }
 
-+(Photo*)photoWithNote:(NSString *)note andImage:(NSString *)image{
++(Photo*)photoWithNote:(NSString *)note andImage:(NSData *)image{
     return [[Photo alloc]initWithNote:note andImage:image];
 }
 

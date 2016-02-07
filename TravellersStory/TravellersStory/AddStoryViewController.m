@@ -10,6 +10,9 @@
 #import "AddPhotoTableViewCell.h"
 #import "MyStory.h"
 #import "Photo.h"
+#import <UIKit/UIKit.h>
+#import "AppDelegate.h"
+#import "CoreData/CoreData.h"
 
 @interface AddStoryViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
@@ -33,7 +36,7 @@
     UIBarButtonItem *doneBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(saveStory)];
     self.navigationItem.rightBarButtonItem = doneBarButton;
     
-    self.numberOfRows = 2;
+    self.numberOfRows = 1;
     
     self.capturedImages = [[NSMutableArray alloc] init];    
 }
@@ -46,23 +49,56 @@
 
 -(void) saveStory {
     
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *managedObjectContext = [appDelegate managedObjectContext];
+    
+    NSEntityDescription *photoEntity = [NSEntityDescription entityForName:@"Photo" inManagedObjectContext:managedObjectContext];
+    
+    NSEntityDescription *storyEntity = [NSEntityDescription entityForName:@"Story" inManagedObjectContext:managedObjectContext];
+    
+    NSManagedObject *newStory = [[NSManagedObject alloc]initWithEntity:storyEntity insertIntoManagedObjectContext:managedObjectContext];
+    
+    [newStory setValue:self.titleTextField.text forKey:@"title"];
+    [newStory setValue:self.destinationTextField.text forKey:@"destination"];
+    
+    NSData *imageDataMainImg = UIImageJPEGRepresentation(self.mainImageView.image, 1.0);
+    [newStory setValue:imageDataMainImg forKey:@"mainImg"];
+    
+    [newStory setValue:self.dateFromDatePicker.date forKey:@"dateFrom"];
+    [newStory setValue:self.dateToDatePicker.date forKey:@"dateTo"];
+    
+    /*
     MyStory *newStory = [MyStory myStoryWithTitle:self.titleTextField.text
                                          dateFrom:self.dateFromDatePicker.date
                                            dateTo:self.dateToDatePicker.date
                                       andImageUrl:@""];
     
     NSMutableArray *photosForStory = [[NSMutableArray alloc]init];
+     */
     
     NSInteger numberOfPhotos = [self.photosTableView numberOfRowsInSection:0];
-    
     for (int row = 0; row < numberOfPhotos; row++) {
+        
         NSIndexPath* cellPath = [NSIndexPath indexPathForRow:row inSection:0];
         AddPhotoTableViewCell *cell = [self.photosTableView cellForRowAtIndexPath:cellPath];
         
-        Photo *newPhoto = [Photo photoWithNote:cell.addNoteTextView.text
-                                      andImage: @"hah"];
-        [photosForStory addObject:newPhoto];
+        NSData *imageData = UIImageJPEGRepresentation(cell.addImageView.image, 1.0);
+        
+        NSManagedObject *newPhoto = [[NSManagedObject alloc]initWithEntity:photoEntity insertIntoManagedObjectContext:managedObjectContext];
+        [newPhoto setValue:cell.addNoteTextView.text forKey:@"note"];
+        [newPhoto setValue:imageData forKey:@"image"];
+        [newPhoto setValue:newStory forKey:@"story"];
+        
+        
+        //Photo *newPhoto = [Photo photoWithNote:cell.addNoteTextView.text                                      andImage: imageData];
+        //[photosForStory addObject:newPhoto];
     }
+    
+    NSError *error;
+    [managedObjectContext save:&error];
+    NSLog(@"saved");
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
                          
 - (void)didReceiveMemoryWarning {

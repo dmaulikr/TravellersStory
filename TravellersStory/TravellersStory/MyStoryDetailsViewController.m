@@ -10,6 +10,8 @@
 #import "Photo.h"
 #import "MyStoryContentTableViewCell.h"
 #import "MyStoryHeadingTableViewCell.h"
+#import "CoreData/CoreData.h"
+#import "ImageFullScreenViewController.h"
 
 @interface MyStoryDetailsViewController ()
 
@@ -23,15 +25,50 @@
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    self.photos = [NSArray arrayWithObjects:
+    /*self.photos = [NSArray arrayWithObjects:
                    [Photo photoWithNote:@"day one at the island..." andImage:@"http://www.odans-travel.com//img/PROGRAMI/BIG_ekskurzia_porto_kaciki_lefkada_1416910147550.jpg"],
                    [Photo photoWithNote:@"beach porto katsiki wow" andImage:@"http://guardianlv.com/wp-content/uploads/2014/06/portokatsiki.jpg"],
-                   nil];
+                   nil];*/
+    NSSet *photosDB =[self.myStory valueForKey:@"photos"];
+    self.photos = [NSArray arrayWithArray:photosDB.allObjects];
+    
+    UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]initWithTarget:self action: @selector(onLongPress:)];
+    
+    lpgr.delegate = self;
+    lpgr.delaysTouchesBegan = YES;
+    [self.tableView addGestureRecognizer:lpgr];
+    
     
 }
+
+
+-(void)onLongPress:(UILongPressGestureRecognizer *)gestureRecognizer
+{
+    if (gestureRecognizer.state != UIGestureRecognizerStateEnded) {
+        return;
+    }
+    CGPoint p = [gestureRecognizer locationInView:self.tableView];
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:p];
+    if (indexPath == nil){
+        NSLog(@"couldn't find index path");
+    } else {
+        
+        MyStoryContentTableViewCell* cell =
+        [self.tableView cellForRowAtIndexPath:indexPath];
+        
+        NSString *storyBoardId = @"imageFullScreen";
+        
+        ImageFullScreenViewController *imageFullScreenViewController = [self.storyboard instantiateViewControllerWithIdentifier:storyBoardId];
+        
+        imageFullScreenViewController.theImage = cell.photoImageView.image;
+        
+        [self.navigationController pushViewController:imageFullScreenViewController animated:YES];    }
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -57,10 +94,10 @@
         
         MyStoryHeadingTableViewCell *cell = (MyStoryHeadingTableViewCell*) originalCell;
         
-        cell.titleLabel.text =  self.myStory.title;
+        cell.titleLabel.text =  [self.myStory valueForKey:@"title"];
         
-        NSDate *dateFrom = self.myStory.dateFrom;
-        NSDate *dateTo = self.myStory.dateTo;
+        NSDate *dateFrom = [self.myStory valueForKey:@"dateFrom"];
+        NSDate *dateTo = [self.myStory valueForKey:@"dateTo"];
         
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"yyyy/MM/dd"];
@@ -70,11 +107,9 @@
         
         cell.dateFromLabel.text = dateFromString;
         cell.dateToLabel.text = dateToString;
-        cell.destinationLabel.text = @"Greece, Lefkada";
+        cell.destinationLabel.text = [self.myStory valueForKey:@"destination"];
         
         return  cell;
-        
-        
         
     } else {
         static NSString *cellIdentifierContent = @"myStoryContentCell";
@@ -87,12 +122,14 @@
         
         MyStoryContentTableViewCell *cell = (MyStoryContentTableViewCell*) originalCell;
         
-        Photo *photo = [self.photos objectAtIndex:indexPath.row -1];
+        NSInteger index = indexPath.row - 1;
         
-        cell.noteTextView.text =  photo.note;
+        NSManagedObject *photo = [self.photos objectAtIndex:index];
         
-        UIImage *img = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString: photo.image]]];
-        //cell.imageView.frame = CGRectMake(0,0, 270, 270);
+        cell.noteTextView.text = [photo valueForKey:@"note"];
+        
+        UIImage *img = [UIImage imageWithData:[photo valueForKey:@"image"]];
+     
         cell.photoImageView.image = img;
         
         return cell;

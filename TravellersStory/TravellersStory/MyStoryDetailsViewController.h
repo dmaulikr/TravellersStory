@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "MyStory.h"
+#import "CoreData/CoreData.h"
+@interface MyStoryDetailsViewController : UITableViewController <UIGestureRecognizerDelegate>
 
-@interface MyStoryDetailsViewController : UITableViewController
-
-@property (strong, nonatomic) MyStory *myStory;
+@property (strong, nonatomic) NSManagedObject *myStory;
 @property (strong, nonatomic) NSArray *photos;
 
 @end

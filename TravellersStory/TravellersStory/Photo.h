@@ -11,12 +11,12 @@
 @interface Photo : NSObject
 
 @property (strong, nonatomic) NSString *note;
-@property (strong, nonatomic) NSString *image;
+@property (strong, nonatomic) NSData *image;
 
 
 -(instancetype)initWithNote: (NSString*) note
-                   andImage: (NSString*) image;
+                   andImage: (NSData*) image;
 
 +(Photo*) photoWithNote: (NSString*) note
-                 andImage: (NSString*) image;
+                 andImage: (NSData*) image;
 @end

@@ -20,6 +20,10 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LiC-Da-Prg">
                                 <rect key="frame" x="25" y="8" width="250" height="250"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="rCQ-ow-yU0" appends="YES" id="lSb-e1-xFQ"/>
+                                </connections>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisic " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="o28-A5-cM2">
                                 <rect key="frame" x="8" y="266" width="284" height="54"/>
@@ -58,5 +62,6 @@
             </connections>
             <point key="canvasLocation" x="304" y="587"/>
         </tableViewCell>
+        <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="rCQ-ow-yU0"/>
     </objects>
 </document>

@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyStoryContentTableViewCell : UITableViewCell
+@interface MyStoryContentTableViewCell : UITableViewCell <UIGestureRecognizerDelegate>
+
 @property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
 @property (weak, nonatomic) IBOutlet UITextView *noteTextView;
 @property (weak, nonatomic) IBOutlet UIView *containerView;
