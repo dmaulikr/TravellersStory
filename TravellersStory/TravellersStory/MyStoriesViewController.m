@@ -13,6 +13,7 @@
 #import "AddStoryViewController.h"
 #import "CoreData/CoreData.h"
 #import "AppDelegate.h"
+#import "DataSQLite.h"
 
 
 @interface MyStoriesViewController ()
@@ -23,11 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+
     UIBarButtonItem *addBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showAdd)];
     
     self.navigationItem.rightBarButtonItem = addBarButton;
@@ -86,20 +83,8 @@
 -(void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
     
-    
-    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *managedObjectContext = [appDelegate managedObjectContext];
-    
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Story" inManagedObjectContext:managedObjectContext];
-    [fetchRequest setEntity:entity];
-    
-    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"dateFrom" ascending:NO];
-    [fetchRequest setSortDescriptors:[NSArray arrayWithObject: sort]];
-    
-    
-    NSError *error;
-    self.myStories = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    DataSQLite *data = [[DataSQLite alloc] init];
+    self.myStories = [data fetchMyStories:(NSString*)@"Story" andSorter:(NSString*)@"dataFrom"];
     
     [self.tableView reloadData];
 }
@@ -119,10 +104,6 @@
 
 #pragma mark - Table view data source
 
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//#warning Incomplete implementation, return the number of sections
-//    return 0;
-//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
@@ -189,44 +170,37 @@
      detailViewController.myStory = story;
  
  [self.navigationController pushViewController:detailViewController animated:YES];
+     
  }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *managedObjectContext = [appDelegate managedObjectContext];
+    
     if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [managedObjectContext deleteObject:[self.myStories objectAtIndex:indexPath.row]];
         
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } 
+        NSError *error = nil;
+        if (![managedObjectContext save:&error]) {
+            NSLog(@"Can't Delete! %@ %@", error, [error localizedDescription]);
+            return;
+        }
+        
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        //[tableView numberOfRowsInSection:self.myStories.count - 1];
+        //[tableView reloadData];
+    }
 }
 
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+-(void)loadNewScreen:(UIViewController *)controller;
+{
+    [self presentViewController:controller animated:YES completion:nil];
 }
-*/
 
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-
-/*
 #pragma mark - Navigation
-
+/*
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].

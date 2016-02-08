@@ -14,10 +14,8 @@
 @property (nonatomic) NSInteger numberOfRows;
 
 @property (weak, nonatomic) IBOutlet UIImageView *mainImageView;
-
-- (IBAction)addMainImg:(id)sender;
-
 @property (weak, nonatomic) IBOutlet UIButton *addMainImageButton;
+- (IBAction)addMainImg:(id)sender;
 
 @property (nonatomic) UIImagePickerController *imagePickerController;
 @property (nonatomic) NSMutableArray *capturedImages;

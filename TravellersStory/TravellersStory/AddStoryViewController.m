@@ -33,18 +33,20 @@ LocationProvider* locationProvider;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.photosTableView.dataSource = self;
-    self.photosTableView.delegate = self;
-    
     UIBarButtonItem *doneBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(saveStory)];
     self.navigationItem.rightBarButtonItem = doneBarButton;
     
+    self.photosTableView.dataSource = self;
+    self.photosTableView.delegate = self;
+    
     self.numberOfRows = 1;
+    
     
     self.capturedImages = [[NSMutableArray alloc] init];
     
     locationProvider = [[LocationProvider alloc] init];
     
+    //self.photosTableView.scrollEnabled = NO;
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -58,14 +60,11 @@ LocationProvider* locationProvider;
 }
 
 
-
-
 -(void) locationUpdated: (CLLocation*) location{
     NSString* locationMessage = [NSString stringWithFormat:@"Your position is (%lf, %lf)",
                                  location.coordinate.latitude,
                                  location.coordinate.longitude];
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-   
     
     [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
        
@@ -134,6 +133,23 @@ LocationProvider* locationProvider;
     NSError *error;
     [managedObjectContext save:&error];
     NSLog(@"saved");
+    
+    UIAlertController * alert=   [UIAlertController
+                                  alertControllerWithTitle:@"Saved!"
+                                  message:@"You have successfully added your story!"
+                                  preferredStyle:UIAlertControllerStyleAlert];
+   
+    UIAlertAction* ok = [UIAlertAction
+                         actionWithTitle:@"OK"
+                         style:UIAlertActionStyleDefault
+                         handler:^(UIAlertAction * action)
+                         {
+                             [alert dismissViewControllerAnimated:YES completion:nil];
+                             
+                         }];
+    [alert addAction:ok];
+    [self presentViewController:alert animated:YES completion:nil];
+    
     
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -225,7 +241,7 @@ LocationProvider* locationProvider;
     imagePickerController.sourceType = sourceType;
     imagePickerController.allowsEditing = YES;
     imagePickerController.delegate = self;
-    
+
 
     self.imagePickerController = imagePickerController;
     

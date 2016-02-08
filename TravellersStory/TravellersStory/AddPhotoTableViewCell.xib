@@ -20,7 +20,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nhb-U9-ncE">
                                 <rect key="frame" x="30" y="8" width="240" height="245"/>
-                                <color key="backgroundColor" red="0.83383413461538458" green="0.83383413461538458" blue="0.83383413461538458" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Add your note here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DCx-tA-etS">
                                 <rect key="frame" x="8" y="260" width="284" height="52"/>

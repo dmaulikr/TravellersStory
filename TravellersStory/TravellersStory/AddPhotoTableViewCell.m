@@ -18,11 +18,11 @@
     
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+/*- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
-}
+}*/
 
 
 - (IBAction)addPhoto:(id)sender {
@@ -55,26 +55,11 @@
     imagePickerController.allowsEditing = YES;
     imagePickerController.delegate = self;
     
-   
-    
     
     if (sourceType == UIImagePickerControllerSourceTypeCamera)
     {
-   
-      /*   The user wants to use the camera interface. Set up our custom overlay view for the camera.*/
-   
-         imagePickerController.showsCameraControls = YES;
-        
-        /*
-         Load the overlay view from the OverlayView nib file. Self is the File's Owner for the nib file, so the overlayView outlet is set to the main view in the nib. Pass that view to the image picker controller to use as its overlay view, and set self's reference to the view to nil.
-        
-        
-        [[NSBundle mainBundle] loadNibNamed:@"OverlayView" owner:self.delegate options:nil];
-        self.overlayView.frame = imagePickerController.cameraOverlayView.frame;
-       imagePickerController.cameraOverlayView = self.overlayView;
-        self.overlayView = nil;
-          */     }
-
+        imagePickerController.showsCameraControls = YES;
+    }
     
     self.imagePickerController = imagePickerController;
     
@@ -95,11 +80,6 @@
     UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
     
     [self.capturedImages addObject:image];
-   /*
-    if ([self.cameraTimer isValid])
-    {
-        return;
-    }*/
     
     [self finishAndUpdate];
     
@@ -117,14 +97,6 @@
         {
             // Camera took a single picture.
             [self.addImageView setImage:[self.capturedImages objectAtIndex:0]];
-        }
-        else
-        {
-            // Camera took multiple pictures; use the list of images for animation.
-            self.imageView.animationImages = self.capturedImages;
-            self.imageView.animationDuration = 5.0;    // Show each captured photo for 5 seconds.
-            self.imageView.animationRepeatCount = 0;   // Animate forever (show all photos).
-            [self.imageView startAnimating];
         }
         
         // To be ready to start again, clear the captured images array.

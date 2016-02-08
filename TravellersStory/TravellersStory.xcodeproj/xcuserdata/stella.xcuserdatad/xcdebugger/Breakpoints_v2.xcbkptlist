@@ -23,54 +23,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TravellersStory/MyStoryDetailsViewController.m"
-            timestampString = "476548578.896779"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "-onLongPress:"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[MyStoryDetailsViewController onLongPress:]"
-                  moduleName = "TravellersStory"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/stella/Desktop/TravellersStory/TravellersStory/TravellersStory/MyStoryDetailsViewController.m"
-                  timestampString = "476549177.44304"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "68"
-                  endingLineNumber = "68"
-                  offsetFromSymbolStart = "588">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[MyStoryDetailsViewController onLongPress:]"
-                  moduleName = "TravellersStory"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/stella/Desktop/TravellersStory/TravellersStory/TravellersStory/MyStoryDetailsViewController.m"
-                  timestampString = "476549177.443274"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "68"
-                  endingLineNumber = "68"
-                  offsetFromSymbolStart = "672">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "TravellersStory/LocationProvider.m"
             timestampString = "476563095.291136"
             startingColumnNumber = "9223372036854775807"
@@ -78,6 +30,22 @@
             startingLineNumber = "50"
             endingLineNumber = "50"
             landmarkName = "-locationManager:didUpdateLocations:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TravellersStory/MyStoriesTableViewCell.m"
+            timestampString = "476586543.074833"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "-shareStory:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
