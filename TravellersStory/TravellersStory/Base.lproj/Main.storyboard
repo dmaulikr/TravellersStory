@@ -317,37 +317,6 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="msZ-BY-iji" id="5c5-7z-bIe">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="274"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CaT-T7-Gn4">
-                                            <rect key="frame" x="179" y="74" width="241" height="185"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4HY-98-cch">
-                                            <rect key="frame" x="179" y="8" width="241" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="241" id="OQf-E4-hSi"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JG9-u4-wUL">
-                                            <rect key="frame" x="179" y="45" width="241" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="4HY-98-cch" firstAttribute="top" secondItem="5c5-7z-bIe" secondAttribute="topMargin" id="MeW-w0-MxK"/>
-                                        <constraint firstItem="CaT-T7-Gn4" firstAttribute="trailing" secondItem="JG9-u4-wUL" secondAttribute="trailing" id="btr-ES-0JQ"/>
-                                        <constraint firstItem="JG9-u4-wUL" firstAttribute="leading" secondItem="CaT-T7-Gn4" secondAttribute="leading" id="fFR-0p-ayW"/>
-                                        <constraint firstItem="4HY-98-cch" firstAttribute="trailing" secondItem="JG9-u4-wUL" secondAttribute="trailing" id="hlL-Ym-LLH"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="CaT-T7-Gn4" secondAttribute="bottom" constant="7" id="icD-tQ-KDl"/>
-                                        <constraint firstItem="JG9-u4-wUL" firstAttribute="top" secondItem="4HY-98-cch" secondAttribute="bottom" constant="16" id="kQ5-Vd-KMA"/>
-                                        <constraint firstItem="JG9-u4-wUL" firstAttribute="centerX" secondItem="5c5-7z-bIe" secondAttribute="centerX" id="qhY-n9-naL"/>
-                                        <constraint firstItem="4HY-98-cch" firstAttribute="leading" secondItem="JG9-u4-wUL" secondAttribute="leading" id="rb5-fG-Adl"/>
-                                        <constraint firstItem="CaT-T7-Gn4" firstAttribute="top" secondItem="JG9-u4-wUL" secondAttribute="bottom" constant="8" symbolic="YES" id="xYE-hT-7fi"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>

@@ -145,7 +145,7 @@ LocationProvider* locationProvider;
                          handler:^(UIAlertAction * action)
                          {
                              [alert dismissViewControllerAnimated:YES completion:nil];
-                             
+                             [self.navigationController popViewControllerAnimated:YES];                             
                          }];
     [alert addAction:ok];
     [self presentViewController:alert animated:YES completion:nil];

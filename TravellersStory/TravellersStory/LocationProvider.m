@@ -20,8 +20,8 @@
 -(instancetype)init{
     if(self = [super init]){
         locationManager = [[CLLocationManager alloc] init];
-        geocoder = [[CLGeocoder alloc] init];
-        placemark = [[CLPlacemark alloc]init];
+        //geocoder = [[CLGeocoder alloc] init];
+        //placemark = [[CLPlacemark alloc]init];
         [self setupLocationManager];
     }
     return self;

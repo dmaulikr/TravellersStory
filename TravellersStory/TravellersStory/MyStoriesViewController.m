@@ -189,6 +189,22 @@
         
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
         
+        UIAlertController * alert=   [UIAlertController
+                                      alertControllerWithTitle:@"Deleted"
+                                      message:@"You have deleted your story!"
+                                      preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* ok = [UIAlertAction
+                             actionWithTitle:@"OK"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                 [alert dismissViewControllerAnimated:YES completion:nil];
+                                 [self.navigationController popViewControllerAnimated:YES];
+                             }];
+        [alert addAction:ok];
+        [self presentViewController:alert animated:YES completion:nil];
+        
         //[tableView numberOfRowsInSection:self.myStories.count - 1];
         //[tableView reloadData];
     }
